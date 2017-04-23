@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="com.kmd.Views.ItemDetailPage" 
+             Title="Task Details" >
+    
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Delete" Clicked="DeleteItem_Clicked"  Icon="trash_w.png"/>
+    </ContentPage.ToolbarItems>
+    
+    <ContentPage.Content>
+        <StackLayout Spacing="20" Padding="15">
+            <Label Text="{Binding Item.Text}" FontSize="Large" TextColor="Green"/>
+            <Label Text="{Binding Item.Description}" FontSize="Medium" TextColor="Orange"/>
+            <StackLayout>
+                <Grid HorizontalOptions="StartAndExpand">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Label Text="Created" FontSize="Medium" Grid.Row="0" Grid.Column="0" />
+                    <Label Text="{Binding Item.VCreated}" FontSize="Small" Grid.Row="0" Grid.Column="1" />
+
+                    <Label Text="Status" FontSize="Medium" Grid.Row="4" Grid.Column="0" />
+                    <Label Text="{Binding Item.Status}" FontSize="Small" Grid.Row="4" Grid.Column="1" />
+
+                    <Label Text="Last Updated" FontSize="Medium" Grid.Row="1" Grid.Column="0" />
+                    <Label Text="{Binding Item.VLastModifiedOn}" FontSize="Small" Grid.Row="1" Grid.Column="1" />
+
+                    <!--<Label Text="Time in current state" FontSize="Medium" Grid.Row="3" Grid.Column="0" />
+                    <Label Text="{Binding Item.VTimeInCurrentStatus}" FontSize="Small" Grid.Row="3" Grid.Column="1" />-->
+
+                    <Label Text="Time taken to complete" FontSize="Medium" Grid.Row="2" Grid.Column="0" />
+                    <Label Text="{Binding Item.VTotalTime}" FontSize="Small" Grid.Row="2" Grid.Column="1" />
+
+                </Grid>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
